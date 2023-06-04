@@ -24,3 +24,22 @@ class Solution:
                         maxtuple = (i, d-1)
         # print(s[maxtuple[0]:maxtuple[1]])
         return maxtuple[1]+1
+    
+
+
+
+## Thank you, LeetCode, for this solution:
+class BetterSolution:
+    def lengthOfLongsetSubstring(self, s: str) -> int:
+        def lengthOfLongestSubstring(self, s: str) -> int:
+        max = 0
+        l = 0
+        r = 0
+        while(r < len(s)):
+            if s[r] not in s[l:r]:
+                r+=1
+                if max < r-l:
+                    max = r-l
+            else:
+                l+=1
+        return max
